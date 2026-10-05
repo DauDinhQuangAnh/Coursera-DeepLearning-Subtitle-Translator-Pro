@@ -77,6 +77,14 @@ Phiên bản cũ thường gặp tình trạng **"lúc dịch được lúc khô
 
 ---
 
-## 💖 Giấy phép
+## 💖 Lời cảm ơn & Nguồn tham khảo (Credits & Acknowledgments)
+
+Dự án này được kế thừa và phát triển nâng cấp mở rộng dựa trên ý tưởng và mã nguồn ban đầu của tác giả [bombap](https://github.com/bombap):
+- Repository gốc: [bombap/coursera-translator](https://github.com/bombap/coursera-translator)
+- Xin chân thành cảm ơn tác giả **bombap** vì đã chia sẻ mã nguồn nền tảng giúp cộng đồng có cơ hội tiếp tục hoàn thiện và phát triển các tính năng hữu ích này!
+
+---
+
+## 📝 Giấy phép
 
 Dự án phát hành theo giấy phép MIT.
