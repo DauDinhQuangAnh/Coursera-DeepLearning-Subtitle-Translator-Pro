@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coursera Translator Pro</title>
+    <link href="popup.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-title">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
+                    </path>
+                </svg>
+                <h1>Coursera Translator <span class="badge-pro">PRO</span></h1>
+            </div>
+            <div id="statusBadge" class="status-pill status-ready">
+                <span class="status-dot"></span>
+                <span id="statusText">Đang kiểm tra...</span>
+            </div>
+        </div>
+
+        <!-- Target Language Selector -->
+        <div class="form-group">
+            <label for="lang">Ngôn ngữ dịch (Target Language)</label>
+            <select id="lang" class="select">
+                <option value="vi">🇻🇳 Tiếng Việt</option>
+                <option value="zh-CN">🇨🇳 Tiếng Trung (Giản thể)</option>
+                <option value="zh-TW">🇹🇼 Tiếng Trung (Phồn thể)</option>
+                <option value="ja">🇯🇵 Tiếng Nhật</option>
+                <option value="ko">🇰🇷 Tiếng Hàn</option>
+                <option value="es">🇪🇸 Tiếng Tây Ban Nha</option>
+                <option value="fr">🇫🇷 Tiếng Pháp</option>
+                <option value="de">🇩🇪 Tiếng Đức</option>
+                <option value="ru">🇷🇺 Tiếng Nga</option>
+                <option value="pt">🇵🇹 Tiếng Bồ Đào Nha</option>
+                <option value="id">🇮🇩 Tiếng Indonesia</option>
+                <option value="th">🇹🇭 Tiếng Thái</option>
+            </select>
+        </div>
+
+        <!-- Subtitle Display Mode -->
+        <div class="form-group">
+            <label for="mode">Kiểu hiển thị phụ đề</label>
+            <select id="mode" class="select">
+                <option value="bilingual">✨ Song ngữ (Anh + Bản dịch)</option>
+                <option value="translated_only">📖 Chỉ bản dịch</option>
+                <option value="original_only">🔤 Chỉ tiếng Anh</option>
+            </select>
+        </div>
+
+        <!-- Font Size Selector -->
+        <div class="form-group">
+            <label for="fontSize">Cỡ chữ phụ đề</label>
+            <select id="fontSize" class="select">
+                <option value="small">Nhỏ (15px)</option>
+                <option value="medium" selected>Vừa (18px)</option>
+                <option value="large">Lớn (22px)</option>
+            </select>
+        </div>
+
+        <!-- Preferences Toggles -->
+        <div class="toggle-group">
+            <div class="toggle-item">
+                <label for="autoTranslate" class="toggle-label">
+                    <span>Tự động dịch khi mở video</span>
+                    <small>Tự tải phụ đề khi chuyển bài học mới</small>
+                </label>
+                <input type="checkbox" id="autoTranslate" class="switch" checked>
+            </div>
+            <div class="toggle-item">
+                <label for="showFloatingBtn" class="toggle-label">
+                    <span>Nút điều khiển trên video player</span>
+                    <small>Bật/tắt nhanh trực tiếp trên video</small>
+                </label>
+                <input type="checkbox" id="showFloatingBtn" class="switch" checked>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions">
+            <button id="toggleBtn" class="button-primary">
+                <span id="toggleBtnText">Bật dịch phụ đề</span>
+            </button>
+            <button id="reloadBtn" class="button-secondary" title="Tải và dịch lại từ đầu">
+                🔄 Dịch lại
+            </button>
+            <button id="resetPosBtn" class="button-secondary" title="Đưa phụ đề về vị trí mặc định bên dưới">
+                🎯 Đặt lại vị trí
+            </button>
+        </div>
+
+        <div id="videoInfo" class="video-info"></div>
+
+        <!-- Footer / Links -->
+        <div class="divider">
+            <span>Thông tin</span>
+        </div>
+        <div class="footer">
+            <a href="https://github.com/DauDinhQuangAnh/Coursera-DeepLearning-Subtitle-Translator-Pro" target="_blank" rel="noopener noreferrer" class="link-github">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                GitHub Project
+            </a>
+            <span class="version-label">v1.2.0</span>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
